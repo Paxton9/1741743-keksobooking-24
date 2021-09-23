@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Aleksandr Schmidt](https://up.htmlacademy.ru/javascript/24/user/1741743).
-* Наставник: `Неизвестно`.
+* Наставник: [Магомед Кандаев](https://up.htmlacademy.ru/javascript/24/user/161600).
 
 ---
 
