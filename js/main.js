@@ -7,7 +7,7 @@ const getRandom = function (min, max) {
     [max, min] = [min, max];
   }
   if (min < 0 || max < 0) {
-    throw new Error('Нельзя использовать отрицательные числа')
+    throw new Error('Нельзя использовать отрицательные числа');
   }
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
