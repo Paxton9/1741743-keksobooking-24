@@ -69,7 +69,7 @@ const createAnAd = () => {
     avatar: 'img/avatars/user' + AVATAR_RANDOM_INT.shift() + '.png',
     offer: getRandomArrayElement(OFFER.name) + getRandomArrayElement(OFFER.lastname) + getRandomArrayElement(OFFER.description),
     title: getRandomArrayElement(AD_TITLE),
-    address: 'Ширина ' + [_.random(35.65000, 35.70000).toFixed(5)] + ' Долгота ' + [_.random(139.70000, 139.80000).toFixed(5)],
+    address: 'Ширина ' + [_.random(35.65000, 35.70000).toFixed(SYMBOLS_COUNT)] + ' Долгота ' + [_.random(139.70000, 139.80000).toFixed(SYMBOLS_COUNT)],
     price: [_.random(60, 830) + ' Евро'],
     type: getRandomArrayElement(HOUSE_TYPE),
     rooms: [_.random(2, 8) + ' Комнат'],
