@@ -2,6 +2,7 @@
 
 const AVATAR_RANDOM_INT = _.shuffle(['01', '02', '03', '04', '05', '06', '07', '08', '09', '10']);
 
+
 const AD_TITLES = ['Проведите лучшую ночь в своей жизни , в компании друзей', 'Получите незабываемые впечатления', 'Удовольствие гарантировано', 'Каждый должен здесь побывать', 'Здесь вам рады', 'Почувствуйте себя царями', 'Здесь бывали Президенты'];
 
 const HOUSE_TYPES = [
@@ -26,6 +27,7 @@ const CHECK_OUTS = [
 
 const SERVICES = _.shuffle(['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner']);
 
+
 const COMPILATION_COUNT = 10;
 
 const SYMBOLS_COUNT = 5;
@@ -37,6 +39,7 @@ const PHOTOS = _.shuffle([
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'
 ]);
+
 
 const getRandomArrayElement = (elements) => {
   return elements[_.random(0, elements.length - 1)];
@@ -57,7 +60,7 @@ const createAd = () => {
       guests: [_.random(2, 12)],
       checkin: getRandomArrayElement(CHECK_INS),
       checkout: getRandomArrayElement(CHECK_OUTS),
-      features: SERVICES.slice( _.random(0 , 3) ,  _.random(2 , 6)),
+      features: SERVICES.slice( _.random(0 , 3) ,  _.random(4 , 6)),
       description: getRandomArrayElement(ROOM_INFOS),
       photos: PHOTOS.slice(0, _.random(1 , 3)),
     },
