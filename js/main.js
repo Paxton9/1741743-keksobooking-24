@@ -25,7 +25,7 @@ const CHECK_OUTS = [
   '14:00',
 ];
 
-const SERVICES = _.shuffle(['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner']);
+const SERVICES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
 
 
 const COMPILATION_COUNT = 10;
@@ -39,12 +39,11 @@ const END_LONG = 139.80000;
 
 const ROOM_INFOS = ['Помещение чистое , ухоженное , солнечная сторона.', 'Хороший , уютный дом', 'Прекрасная квартирка', 'Оборудованное помешение для комфортного жилья', 'Замечательное место , торговые центры в шаговой доступности', 'Новый Hitech ремонт и просторные комнаты',]
 
-const PHOTOS = _.shuffle([
+const PHOTOS = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'
-]);
-
+];
 
 
 const createAd = () => {
@@ -52,26 +51,27 @@ const createAd = () => {
   const randomLong = _.random(BEGIN_LONG, END_LONG).toFixed(SYMBOLS_COUNT);
   return {
     author: {
-      avatar: 'img/avatars/user' + randomInts.shift() + '.png'},
+      avatar: `img/avatars/user${randomInts.shift()}.png`},
     offer: {
       title: _.sample(AD_TITLES),
-      address:  randomLong + ' ' + randomLat,
+      address:  `${randomLat} ${randomLong}`,
       price: _.random(60, 830),
       type: _.sample(HOUSE_TYPES),
       rooms: _.random(2, 8),
       guests: _.random(2, 12),
       checkin: _.sample(CHECK_INS),
       checkout: _.sample(CHECK_OUTS),
-      features: SERVICES.slice( _.random(0 , 3) ,  _.random(4 , 6)),
+      features: _.sampleSize(SERVICES, _.random(1 , SERVICES.length)),
       description: _.sample(ROOM_INFOS),
-      photos: PHOTOS.slice(0, _.random(1 , 3)),
+      photos: _.sampleSize(PHOTOS, _.random(1 , PHOTOS.length)),
     },
     location: {
       lat: randomLat,
-      lng: randomLong ,
+      lng: randomLong,
     },
   };
 };
 
 const announcements = Array.from({length: COMPILATION_COUNT}, createAd);
+
 console.log(announcements);
