@@ -37,12 +37,12 @@ const END_LAT = 35.70000;
 const BEGIN_LONG = 139.70000;
 const END_LONG = 139.80000;
 
-const ROOM_INFOS = ['Помещение чистое , ухоженное , солнечная сторона.', 'Хороший , уютный дом', 'Прекрасная квартирка', 'Оборудованное помешение для комфортного жилья', 'Замечательное место , торговые центры в шаговой доступности', 'Новый Hitech ремонт и просторные комнаты',]
+const ROOM_INFOS = ['Помещение чистое , ухоженное , солнечная сторона.', 'Хороший , уютный дом', 'Прекрасная квартирка', 'Оборудованное помешение для комфортного жилья', 'Замечательное место , торговые центры в шаговой доступности', 'Новый Hitech ремонт и просторные комнаты'];
 
 const PHOTOS = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'
+  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
 ];
 
 
@@ -54,16 +54,16 @@ const createAd = () => {
       avatar: `img/avatars/user${randomInts.shift()}.png`},
     offer: {
       title: _.sample(AD_TITLES),
-      address:  `${randomLat} ${randomLong}`,
+      address:  `${randomLat}, ${randomLong}`,
       price: _.random(60, 830),
       type: _.sample(HOUSE_TYPES),
       rooms: _.random(2, 8),
       guests: _.random(2, 12),
       checkin: _.sample(CHECK_INS),
       checkout: _.sample(CHECK_OUTS),
-      features: _.sampleSize(SERVICES, _.random(1 , SERVICES.length)),
+      features: _.sampleSize(SERVICES, _.random(0 , SERVICES.length)),
       description: _.sample(ROOM_INFOS),
-      photos: _.sampleSize(PHOTOS, _.random(1 , PHOTOS.length)),
+      photos: _.sampleSize(PHOTOS, _.random(0 , PHOTOS.length)),
     },
     location: {
       lat: randomLat,
