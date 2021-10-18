@@ -72,3 +72,6 @@ const createAd = () => {
 const announcements = Array.from({length: COMPILATION_COUNT}, createAd);
 
 export {announcements};
+
+export {SERVICES};
+
