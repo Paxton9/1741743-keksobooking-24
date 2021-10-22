@@ -53,7 +53,7 @@ const createAd = () => {
     offer: {
       title: _.sample(AD_TITLES),
       address:  `${randomLat}, ${randomLong}`,
-      price: _.random(60, 830),
+      price: _.random(3500, 76000),
       type: _.sample(HOUSE_TYPES),
       rooms: _.random(2, 8),
       guests: _.random(2, 12),
@@ -73,5 +73,4 @@ const announcements = Array.from({length: COMPILATION_COUNT}, createAd);
 
 export {announcements};
 
-export {SERVICES};
 

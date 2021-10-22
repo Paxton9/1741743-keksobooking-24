@@ -1,4 +1,6 @@
 
-import './utils/data.js';
 import { announcements } from './utils/data.js';
-console.log(announcements);
+import {renderCards} from './utils/gen-markup.js';
+
+
+renderCards(announcements);
